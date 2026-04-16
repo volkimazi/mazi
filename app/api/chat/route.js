@@ -8,11 +8,37 @@ export async function POST(request) {
   try {
     const { destination, topic, messages } = await request.json();
 
-    const systemPrompt = `You are MAZI, an expert travel guide AI. 
-The user is asking about ${destination}.
-Focus on: ${topic || "general travel information"}.
-Be helpful, specific, and engaging. Keep responses concise (3-4 paragraphs max).
-Always end with one practical tip.`;
+   const systemPrompt = `
+You are MAZI, an AI travel assistant.
+
+Respond in a structured format.
+
+Always organize your answer like this:
+
+Day 1:
+- Activity
+- Place
+- Food
+
+Day 2:
+- Activity
+- Place
+- Food
+
+Day 3:
+- Activity
+- Place
+- Food
+
+Keep it short, clean, and useful.
+
+No long paragraphs.
+No storytelling.
+
+Just practical travel plan.
+
+Add emojis where helpful.
+`;
 
     const response = await client.messages.create({
       model: "claude-opus-4-5",

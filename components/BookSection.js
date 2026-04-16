@@ -1,5 +1,7 @@
 "use client";
 
+import { Building2, Map, CloudSun, Car } from "lucide-react";
+
 export default function BookSection({ destination, lang }) {
   if (!destination) return null;
 
@@ -10,7 +12,7 @@ export default function BookSection({ destination, lang }) {
   return (
     <section className="section">
       <h2 className="section-title">
-        {lang === "en" ? "Book & Explore" : "Rezervasyon & Keşfet"}
+        {lang === "en" ? "Book & Explore" : "Rezervasyon & Kesfet"}
       </h2>
 
       <div className="book-grid">
@@ -20,7 +22,7 @@ export default function BookSection({ destination, lang }) {
           rel="noopener noreferrer"
           className="book-card"
         >
-          <span className="book-icon">🏨</span>
+          <Building2 size={22} strokeWidth={2.1} className="book-svg-icon" />
           <span>{lang === "en" ? "Hotels" : "Oteller"}</span>
         </a>
 
@@ -30,7 +32,7 @@ export default function BookSection({ destination, lang }) {
           rel="noopener noreferrer"
           className="book-card"
         >
-          <span className="book-icon">🗺️</span>
+          <Map size={22} strokeWidth={2.1} className="book-svg-icon" />
           <span>{lang === "en" ? "Map" : "Harita"}</span>
         </a>
 
@@ -40,7 +42,7 @@ export default function BookSection({ destination, lang }) {
           rel="noopener noreferrer"
           className="book-card"
         >
-          <span className="book-icon">⛅</span>
+          <CloudSun size={22} strokeWidth={2.1} className="book-svg-icon" />
           <span>{lang === "en" ? "Weather" : "Hava"}</span>
         </a>
 
@@ -50,8 +52,8 @@ export default function BookSection({ destination, lang }) {
           rel="noopener noreferrer"
           className="book-card"
         >
-          <span className="book-icon">🚗</span>
-          <span>{lang === "en" ? "Car Rental" : "Araç Kiralama"}</span>
+          <Car size={22} strokeWidth={2.1} className="book-svg-icon" />
+          <span>{lang === "en" ? "Car Rental" : "Arac Kiralama"}</span>
         </a>
       </div>
     </section>
